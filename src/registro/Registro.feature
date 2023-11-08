@@ -1,9 +1,9 @@
+
+
+Feature: Registro de nuevos usuarios en Homecenter
 @primerRegistro
-
-Feature: Como un nuevo usuario, quiero registrarme en el sitio web para acceder a sus servicios.
-
-  Scenario: Registro de nuevo usuario con nombre y correo electrónico
-    Given que estoy en la página de preregistro
-    When continuo con el formulario
-    Then verifico que el Lógin se carga exitosamente
+ Scenario: Registro de un nuevo usuario con nombre y correo electrónico
+    Given que estoy en la página de registro de Homecenter
+    When lleno el formulario de registro
+    Then verifico que el registro se completa exitosamente
     

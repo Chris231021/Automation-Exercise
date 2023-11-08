@@ -23,27 +23,17 @@ export class BotonpSteps { // Define una clase llamada BotonpSteps.
         return pageProvider.wait(PreregistroPagex); 
     }
     
-    @Given(/^que estoy en la página de preregistro$/)
+    @Given(/^que estoy en la página de registro de Homecenter$/)
     async sesion() {
         await pageProvider.go(PreregistroPagex); //
     }
    
-   
-    @When(/^ingreso mi Username y mi Email$/)
-    async credenciales() {
-         await ((await this.PrerregistroPage)).registro();  
-}
-    @When(/^hago clic en el botón "Registrarse"$/) 
-    async botonLogin() {
-        await ((await this.PrerregistroPage)).bntLogin(); 
-    }
-
-    @When(/^continuo con el formulario$/) 
+    @When(/^lleno el formulario de registro$/) 
     async credenciales2() {
         await ((await this.PrerregistroPagex)).preregistro(); 
     }
 
-     @Then(/^verifico que el Lógin se carga exitosamente$/) 
+     @Then(/^verifico que el registro se completa exitosamente$/) 
      async UsuarioExitoso() {
          const nombreUsuario = await (await this.PrerregistroPage).registro();
          expect (await (await this.LoginExitosoPage).VerificaP(nombreUsuario)).to.be.true; 
